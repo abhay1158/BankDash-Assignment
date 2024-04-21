@@ -55,10 +55,6 @@ h2 {
   z-index: 10px;
 }
 
-#search-bar-container {
-  /*  need to implement the logic for search-icon & input merging */
-}
-
 .icons,
 .search-icon {
   font-size: 1.5rem;

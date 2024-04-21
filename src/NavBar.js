@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import React from "react";
+import $ from "jquery";
 import "./Navbar.css";
 
 const NavBar = () => {
@@ -10,19 +11,57 @@ const NavBar = () => {
   };
   
   const [showNotificationDrawer, setNotificationDrawer] = useState(false);
-  const toggleNotificationDrawer = () => {
+
+  function bellIconChangeEffect(){
     const notificationBell = document.querySelector("#notification-bell i");
-    setNotificationDrawer(!showNotificationDrawer);
-    if (showNotificationDrawer) {
-            notificationBell.classList.remove("fa-solid");
-            notificationBell.classList.add("fa-regular");
+      if (showNotificationDrawer) {
+        notificationBell.classList.remove("fa-solid");
+        notificationBell.classList.add("fa-regular");
 
     } else {
-      notificationBell.classList.add("fa-solid");
-      notificationBell.classList.remove("fa-regular");
+    notificationBell.classList.add("fa-solid");
+    notificationBell.classList.remove("fa-regular");
     }
+  }
+
+  const toggleNotificationDrawer = () => {
+    setNotificationDrawer(!showNotificationDrawer);
+    bellIconChangeEffect();
     setUserInfo(false);
   };
+
+
+  const hideToggle = () => {
+    if (!showNotificationDrawer) {
+      setNotificationDrawer(false);
+  
+    }
+    if (!showUserInfo) {
+      setUserInfo(false);
+    }
+  };
+  
+  useEffect(() => {
+    const handleClick = (event) => {
+      const targetNotificationBell = document.querySelector("#notification-bell i");
+      const targetUserInfo = document.querySelector(".user-profile img");
+      if (event.target!== targetNotificationBell &&
+       event.target!== targetUserInfo) {
+        hideToggle();
+
+        if(event.target== targetNotificationBell){
+          bellIconChangeEffect();
+        }
+        
+      }
+    };
+
+    $(document).on("click", handleClick);
+    return () => {
+      $(document).off("click", handleClick);
+    };
+  }, []);
+  
 
   const userDetails = {
     name: "Grace Jhon",
@@ -55,7 +94,7 @@ const NavBar = () => {
 
         <div className="notification-drawer">
           {showNotificationDrawer && (
-            <div>
+            <div className="noticifation-drawer-all-elements">
               <div className="notification-drawer-header">
                 <h2>Notifications</h2>
                 <div className="cross-icon">
@@ -166,3 +205,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
