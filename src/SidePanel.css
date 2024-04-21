@@ -1,0 +1,33 @@
+.side-panel-container {
+  width: 12%;
+  color: #b1b1b0;
+  border-right: 1px solid #e9f0f6;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 70px 89px;
+  position: relative;
+  background-color: #ffff;
+  height: 130vh;
+}
+
+.bank-dash-logo {
+  margin-bottom: 20px;
+}
+
+.list-items {
+  width: 100%;
+  list-style: none;
+  line-height: 3.4rem;
+  cursor: pointer;
+}
+
+.list-items i {
+  margin-right: 20px;
+}
+
+.list-items.active {
+  color: #1815f2;
+}
