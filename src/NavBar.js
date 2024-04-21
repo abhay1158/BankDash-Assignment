@@ -60,7 +60,7 @@ const NavBar = () => {
     return () => {
       $(document).off("click", handleClick);
     };
-  }, []);
+  }, [bellIconChangeEffect]);
   
 
   const userDetails = {
