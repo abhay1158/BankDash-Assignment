@@ -1,5 +1,5 @@
 import React from "react";
-import "./SidePanel.css";
+import "./sass/side-panel.sass";
 
 export const SidePanel = () => {
   return (

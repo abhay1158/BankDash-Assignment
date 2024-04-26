@@ -1,0 +1,153 @@
+// Variables
+$h2-color: #343d6b
+$white-backgrond-color: #ffff
+$grey-background-color: #f5f7fa
+$red-color: #fc7085
+$notification-drawer-color: #615e5f
+
+
+//============================import common design=======================
+@import "common-design"
+
+* 
+  margin: 0
+  padding: 0
+
+h2
+  color: $h2-color
+  +font-size(32px)
+  
+.notification h3
+  +font-size(17.6px)
+
+//=======================================================navbar design=============================
+.navbar
+  +grid-styling
+  grid-template-columns: 1fr 10fr
+  position: absolute
+  background-color: $primary-color
+  +sides(0%, null, null, calc(22% + 6px))
+  +dimension(80%, auto)
+  border-bottom: 1px solid $primary-color
+
+.right-panel
+  +grid-styling
+  grid-template-columns: 1fr 0.5fr auto 0.5fr
+
+// ============================================search bar design============================================
+.search-bar
+  +flex-styling
+
+  ::placeholder
+    text-align: right
+
+  i
+    +dimension(50px, auto)
+    transform: translate(55px, 1px)
+    z-index: 10px
+
+.icons, .search-icon
+  +font-size(1.5rem)
+  background-color: $grey-background-color
+  text-align: center
+  +flex-styling
+  +dimension(50px, 50px)
+  border-radius: 50%
+  cursor: pointer
+
+#search-bar
+  font-family: "Poppins"
+  +padding(10px, 55px, 10px, 55px)
+  background-color: $grey-background-color
+  border: none
+  +font-size(1.1rem)
+  outline: none
+  border-radius: 2rem
+  +dimension(250px, auto)
+
+======================================================notification design========================================
+.notifications i
+  color: $red-color
+
+.notification-drawer
+  position: absolute
+  +dimension(550px, null)
+  color: $notification-drawer-color
+  background-color: $primary-color
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+  border-radius: 10px
+  +sides(73px, null, null, 29%)
+  z-index: 15
+
+  &-header
+    +flex-styling(space-between)
+    +margin(10px, 20px, 10px, 20px)
+
+    i
+      cursor: pointer
+      +font-size(1.4rem)
+
+  &-body
+    border: 1px solid #cccc
+    border-radius: 6px
+    +padding(10px, 20px, 10px, 20px)
+
+.notification
+  +flex-styling(space-between)
+
+.notification-list
+  flex-direction: column
+  +flex-styling(space-between, space-between)
+  +font-size(14px)
+
+  li
+    +margin(10px, 20px, 10px, 20px)
+    list-style: none
+
+// ========================================================User Profile design========================================
+.user-profile
+  cursor: pointer
+
+  &-img
+    +margin(null, 30px, null, null)
+
+.profile-info-togle
+  +flex-styling
+  position: absolute
+  +dimension(450px, null)
+  +sides(116%, null, null, 46%)
+  background-color: $primary-color
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+  border-radius: 10px
+  z-index: 15
+
+  .togle-list-items
+    flex-direction: column
+    +font-size(14px)
+    +padding(10px, 10px, 10px, 10px)
+
+    li
+      color: $text-color-black
+      list-style: none
+      border-top: 2px solid #cccc
+      +padding(10px, 10px, 10px, 10px)
+
+.user-details-info
+  flex-direction: column
+  +flex-styling(space-evenly, space-around)
+  color: $text-color-black
+  +padding(18px, 24px, 18px, 24px)
+
+.user-basic-details
+  flex-direction: column
+  +flex-styling(space-evenly, space-evenly)
+  color: $text-color-black
+
+.right-section
+  +flex-styling
+
+  p
+    +margin(null, 10px, null, null)
+
+.user-personal-data
+  +flex-styling

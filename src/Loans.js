@@ -1,10 +1,9 @@
 import React from "react";
-import "./Loans.css";
+import "./sass/loans.sass";
 
 const Loans = () => {
-  // implement the logic of toggling of profile & notification
   return (
-    // loan category containers
+
     <div className="loans-page">
       <div className="loans-categories">
         <div className="loan-category-container" id="personal-loan">
@@ -151,12 +150,12 @@ const Loans = () => {
               </td>
             </tr>
             <tr>
-              <td className="total">Total</td>
-              <td className="total">$125,0000</td>
-              <td className="total">$750,000</td>
-              <td className="total"></td>
-              <td className="total"></td>
-              <td className="total">$50,000 / month</td>
+              <td className="last-row-of-table">Total</td>
+              <td className="last-row-of-table">$125,0000</td>
+              <td className="last-row-of-table">$750,000</td>
+              <td className="last-row-of-table"></td>
+              <td className="last-row-of-table"></td>
+              <td className="last-row-of-table">$50,000 / month</td>
               <td></td>
             </tr>
           </table>

@@ -1,0 +1,92 @@
+@import "common-design"
+
+h2, h3
+  color: #343d6b
+  +font-size(1.5rem)
+  +margin(null, null, 30px, null)
+
+===========================================loan page design=====================================================
+.loans-page
+  +dimension(60%, null)
+  +sides(7%, null, null, calc(21% + 9px))
+  +margin(null, null, null, 3rem)
+  +flex-styling(null, null)
+  position: absolute
+  flex-direction: column
+
+.loans-categories
+  +flex-styling(space-between, null)
+  +margin(3%, 3%, 3%, 3%)
+  +padding(10px, 10px, 10px, 10px)
+
+.loan-category-container
+  +flex-styling(space-between, null)
+  background-color: $primary-color
+  +dimension(200px, null)
+  +padding(10px, 28px, 10px, 28px)
+  +margin(10px, 10px, 10px, 10px)
+  border-radius: 1rem
+
+.loan-category-with-amount-container
+  +flex-styling(center, flex-start)
+  text-align: center
+  flex-direction: column
+
+.loan-img
+  +margin(null, 10px, null, null)
+
+.category-name
+  +dimension(max-content, null)
+  color: #718fbe
+
+.loan-amount
+  color: $text-color-black
+  font-weight: bold
+
+.loan-overview-label h3
+  +margin(5px, 5px, 5px, 5px)
+
+
+// ========================================================loan detail table design==========================================
+.active-loans-table
+  +margin(10px, 10px, 10px, 10px)
+
+table
+  +dimension(100%, null)
+  background-color: $primary-color
+  border-collapse: collapse
+  border-radius: 1rem
+
+  tr
+    border-bottom: 1px solid #f3f5f7
+
+    th
+      +padding(8px, 8px, 8px, 8px)
+      font-weight: normal
+      text-align: left
+      color: #718ebf
+
+    td
+      +padding(8px, 8px, 8px, 8px)
+      color: $text-color-black
+      text-align: left
+
+.last-row-of-table
+  color: #df0a0a
+  font-weight: 500
+
+.repay-btn
+  +font-size(15px)
+  +flex-styling
+  +dimension(100px, 35px)
+  +margin(15px, null, 8px, null)
+  font-weight: bold
+  border-radius: 37px
+  background-color: $primary-color
+  cursor: pointer
+  border: 1px solid $text-color-black
+  color: $text-color-black
+
+.repay-btn.active
+  color: #1815f2
+  border-color: #1815f2

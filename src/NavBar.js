@@ -1,9 +1,11 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect  } from "react";
 import React from "react";
 import $ from "jquery";
-import "./Navbar.css";
+import "./sass/navbar.sass";
+
 
 const NavBar = () => {
+  
   const [showUserInfo, setUserInfo] = useState(false);
   const toggleUserInfo = () => {
     setUserInfo(!showUserInfo);
@@ -14,13 +16,15 @@ const NavBar = () => {
 
   function bellIconChangeEffect(){
     const notificationBell = document.querySelector("#notification-bell i");
+
       if (showNotificationDrawer) {
         notificationBell.classList.remove("fa-solid");
         notificationBell.classList.add("fa-regular");
-
-    } else {
+    } 
+    else{
     notificationBell.classList.add("fa-solid");
     notificationBell.classList.remove("fa-regular");
+      
     }
   }
 
@@ -34,7 +38,7 @@ const NavBar = () => {
   const hideToggle = () => {
     if (!showNotificationDrawer) {
       setNotificationDrawer(false);
-  
+      
     }
     if (!showUserInfo) {
       setUserInfo(false);
@@ -48,11 +52,9 @@ const NavBar = () => {
       if (event.target!== targetNotificationBell &&
        event.target!== targetUserInfo) {
         hideToggle();
-
-        if(event.target== targetNotificationBell){
-          bellIconChangeEffect();
-        }
-        
+      }
+      if(event.target=== targetNotificationBell){
+        bellIconChangeEffect();
       }
     };
 
@@ -164,7 +166,6 @@ const NavBar = () => {
           <img
             src="profilePic.png"
             alt="profile pic?"
-            // onClick={() => showUserInfo}
             onClick={toggleUserInfo}
           />
         </div>

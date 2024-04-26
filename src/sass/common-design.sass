@@ -1,0 +1,41 @@
+$text-color-black: #000000
+$primary-color: #ffff
+=flex-styling($justify: center, $align: center)
+  display: flex
+  justify-content: $justify
+  align-items: $align
+
+=grid-styling($place: center)
+  display: grid
+  place-items: $place
+
+=font-size($size)
+  font-size: $size
+
+=padding($top, $right: null, $bottom: null, $left: null)
+  padding-top: $top
+  @if $right
+    padding-right: $right
+  @if $bottom
+    padding-bottom: $bottom
+  @if $left
+    padding-left: $left
+
+=margin($top, $right: null, $bottom: null, $left: null)
+  margin-top: $top
+  @if $right
+    margin-right: $right
+  @if $bottom
+    margin-bottom: $bottom
+  @if $left
+    margin-left: $left
+
+=dimension($width, $height)
+  width: $width
+  height: $height
+
+=sides($top, $right, $bottom, $left)
+  top: $top
+  right: $right
+  bottom: $bottom
+  left: $left

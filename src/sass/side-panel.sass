@@ -1,0 +1,30 @@
+@import "common-design"
+
+=======================================side panel design====================================================
+.side-panel-container
+  +flex-styling(null, flex-end)
+  +dimension(12%, 130vh)
+  +font-size(1.2rem)
+  +padding(70px, 89px, 70px, 89px)
+  color: #b1b1b0
+  border-right: 1px solid #e9f0f6
+  flex-direction: column
+  font-weight: 500
+  position: relative
+  background-color: $primary-color
+
+.bank-dash-logo
+  +margin(null, null, 20px, null)
+
+===========================================side pamel menu all element=======================================
+.list-items
+  +dimension(100%, null)
+  list-style: none
+  line-height: 3.4rem
+  cursor: pointer
+
+  i
+    +margin(null, 20px, null, null)
+
+.active
+  color: #1815f2
