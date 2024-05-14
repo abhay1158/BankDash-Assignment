@@ -1,11 +1,12 @@
-import { useState, useEffect  } from "react";
 import React from "react";
+import { useState, useEffect  } from "react";
 import $ from "jquery";
 import "./sass/navbar.sass";
 
 
 const NavBar = () => {
   
+  //
   const [showUserInfo, setUserInfo] = useState(false);
   const toggleUserInfo = () => {
     setUserInfo(!showUserInfo);
@@ -17,13 +18,13 @@ const NavBar = () => {
   function bellIconChangeEffect(){
     const notificationBell = document.querySelector("#notification-bell i");
 
-      if (showNotificationDrawer) {
-        notificationBell.classList.remove("fa-solid");
-        notificationBell.classList.add("fa-regular");
+    if (showNotificationDrawer) {
+      notificationBell.classList.remove("fa-solid");
+      notificationBell.classList.add("fa-regular");
     } 
     else{
-    notificationBell.classList.add("fa-solid");
-    notificationBell.classList.remove("fa-regular");
+      notificationBell.classList.add("fa-solid");
+      notificationBell.classList.remove("fa-regular");
       
     }
   }
